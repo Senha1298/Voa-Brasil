@@ -6,11 +6,6 @@
   "keywords": ["node", "express", "react", "typescript", "vite", "gov-br"],
   "image": "heroku/nodejs",
   "stack": "heroku-24",
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
-    }
-  ],
   "formation": {
     "web": {
       "quantity": 1,
@@ -21,6 +16,10 @@
     "NODE_ENV": {
       "description": "Environment mode",
       "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Install devDependencies for build process",
+      "value": "false"
     },
     "PORT": {
       "description": "Port for the application",

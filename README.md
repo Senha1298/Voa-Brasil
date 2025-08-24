@@ -24,6 +24,7 @@ Portal oficial do Programa Voa Brasil - Sistema de passagens aéreas por R$200 p
 3. **Configure as variáveis de ambiente**
    ```bash
    heroku config:set NODE_ENV=production
+   heroku config:set NPM_CONFIG_PRODUCTION=false
    heroku config:set PAGNET_PUBLIC_KEY=sua_chave_publica
    heroku config:set PAGNET_SECRET_KEY=sua_chave_secreta
    ```
@@ -38,6 +39,13 @@ Portal oficial do Programa Voa Brasil - Sistema de passagens aéreas por R$200 p
 heroku buildpacks:set heroku/nodejs
 git push heroku main
 ```
+
+### Importante: Build Process
+O projeto usa `heroku-postbuild` script que:
+- Instala devDependencies (NPM_CONFIG_PRODUCTION=false)
+- Executa build do frontend (Vite)
+- Executa build do backend (esbuild)
+- Serve arquivos estáticos em produção
 
 ### Deploy com um clique
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)

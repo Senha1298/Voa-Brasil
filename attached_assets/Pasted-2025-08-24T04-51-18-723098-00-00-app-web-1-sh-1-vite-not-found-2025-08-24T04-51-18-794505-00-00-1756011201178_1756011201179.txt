@@ -1,0 +1,40 @@
+2025-08-24T04:51:18.723098+00:00 app[web.1]: sh: 1: vite: not found
+2025-08-24T04:51:18.794505+00:00 heroku[web.1]: Process exited with status 127
+2025-08-24T04:51:18.818985+00:00 heroku[web.1]: State changed from starting to crashed
+2025-08-24T04:51:48.863588+00:00 heroku[release.7764]: Starting process with command `/bin/sh -c 'if curl https://heroku-release-output.s3.amazonaws.com/log-stream?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZSXS6CXKUD5IMVTI%2F20250824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250824T045143Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=986fd6ccfe1088f154cfa2560b719eb6b35a3664c27123fcbfc0d58b105b96dd --silent --connect-timeout 10 --retry 3 --retry-delay 1 >/tmp/log-stream; then
+2025-08-24T04:51:49.492148+00:00 heroku[release.7764]: State changed from starting to up
+2025-08-24T04:51:49.550976+00:00 app[release.7764]: Build completed
+2025-08-24T04:51:49.683234+00:00 heroku[release.7764]: Process exited with status 0
+2025-08-24T04:51:49.706472+00:00 heroku[release.7764]: State changed from up to complete
+2025-08-24T04:51:50.734920+00:00 heroku[web.1]: State changed from crashed to starting
+2025-08-24T04:51:56.079266+00:00 heroku[web.1]: Starting process with command `npm run build && npm start`
+2025-08-24T04:51:56.931799+00:00 heroku[web.1]: Process exited with status 127
+2025-08-24T04:51:56.856095+00:00 app[web.1]: 
+2025-08-24T04:51:56.856118+00:00 app[web.1]: > rest-express@1.0.0 build
+2025-08-24T04:51:56.856119+00:00 app[web.1]: > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-08-24T04:51:56.856120+00:00 app[web.1]: 
+2025-08-24T04:51:56.862427+00:00 app[web.1]: sh: 1: vite: not found
+2025-08-24T04:51:56.958216+00:00 heroku[web.1]: State changed from starting to crashed
+2025-08-24T04:50:58.927057+00:00 app[api]: Running release v3 commands by user suporte@brasilpagamentos.org
+2025-08-24T04:50:58.927057+00:00 app[api]: Deploy 7847b5f7 by user suporte@brasilpagamentos.org
+2025-08-24T04:50:59.712517+00:00 app[api]: Starting process with command `/bin/sh -c 'if curl $HEROKU_RELEASE_LOG_STREAM --silent --connect-timeout 10 --retry 3 --retry-delay 1 >/tmp/log-stream; then
+2025-08-24T04:50:59.712517+00:00 app[api]:   chmod u+x /tmp/log-stream
+2025-08-24T04:50:59.712517+00:00 app[api]:   /tmp/log-stream /bin/sh -c '"'"'echo "Build completed"'"'"'
+2025-08-24T04:50:59.712517+00:00 app[api]: else
+2025-08-24T04:50:59.712517+00:00 app[api]:   echo "Build completed"
+2025-08-24T04:50:59.712517+00:00 app[api]: fi'` by user suporte@brasilpagamentos.org
+2025-08-24T04:51:02.000000+00:00 app[api]: Build succeeded
+2025-08-24T04:51:06.397519+00:00 app[api]: Scaled to release@0:Basic web@1:Basic by user suporte@brasilpagamentos.org
+2025-08-24T04:51:06.383746+00:00 app[api]: Release v3 created by user suporte@brasilpagamentos.org
+2025-08-24T04:51:13.000000+00:00 app[api]: Build started by user suporte@brasilpagamentos.org
+2025-08-24T04:51:42.633319+00:00 app[api]: Running release v4 commands by user suporte@brasilpagamentos.org
+2025-08-24T04:51:42.633319+00:00 app[api]: Deploy 7847b5f7 by user suporte@brasilpagamentos.org
+2025-08-24T04:51:43.584916+00:00 app[api]: Starting process with command `/bin/sh -c 'if curl $HEROKU_RELEASE_LOG_STREAM --silent --connect-timeout 10 --retry 3 --retry-delay 1 >/tmp/log-stream; then
+2025-08-24T04:51:43.584916+00:00 app[api]:   chmod u+x /tmp/log-stream
+2025-08-24T04:51:43.584916+00:00 app[api]:   /tmp/log-stream /bin/sh -c '"'"'echo "Build completed"'"'"'
+2025-08-24T04:51:43.584916+00:00 app[api]: else
+2025-08-24T04:51:43.584916+00:00 app[api]:   echo "Build completed"
+2025-08-24T04:51:43.584916+00:00 app[api]: fi'` by user suporte@brasilpagamentos.org
+2025-08-24T04:51:45.000000+00:00 app[api]: Build succeeded
+2025-08-24T04:51:50.542601+00:00 app[api]: Release v4 created by user suporte@brasilpagamentos.org
+2025-08-24T04:53:05.528961+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=voaaaaa-661c1fc7d957.herokuapp.com request_id=957a7664-72d9-cd36-ce6b-7f646a751475 fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
