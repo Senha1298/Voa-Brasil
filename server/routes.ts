@@ -11,6 +11,9 @@ class PagnetAPI {
     this.secretKey = secretKey;
     
     if (!this.publicKey || !this.secretKey) {
+      console.error('[PAGNET] ERRO: Chaves de API não configuradas');
+      console.error('[PAGNET] PAGNET_PUBLIC_KEY:', publicKey ? 'SET' : 'MISSING');
+      console.error('[PAGNET] PAGNET_SECRET_KEY:', secretKey ? 'SET' : 'MISSING');
       throw new Error('PAGNET_PUBLIC_KEY e PAGNET_SECRET_KEY são obrigatórias');
     }
     

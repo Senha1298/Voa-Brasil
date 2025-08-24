@@ -59,7 +59,20 @@ app.use((req, res, next) => {
   // Serve the app on Heroku's assigned port or 5000 for development
   // this serves both the API and the client
   const PORT = process.env.PORT || 5000;
+  
+  // Add error handling for server startup
+  server.on('error', (err: any) => {
+    log(`Server error: ${err.message}`);
+    if (err.code === 'EADDRINUSE') {
+      log(`Port ${PORT} is already in use`);
+      process.exit(1);
+    }
+    throw err;
+  });
+
   server.listen(PORT, "0.0.0.0", () => {
     log(`serving on port ${PORT}`);
+    log(`Environment: ${process.env.NODE_ENV}`);
+    log(`Platform: ${process.platform}`);
   });
 })();

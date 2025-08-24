@@ -51,6 +51,20 @@ O projeto usa `heroku-postbuild` script que:
 - **ES Module Error**: Script convertido para ES modules (import/export)
 - **Build Dependencies**: NPM_CONFIG_PRODUCTION=false garante devDependencies
 - **Node Version**: Usa Node.js mais recente disponível no Heroku
+- **App Crash**: Verificar logs com `heroku logs --tail`
+- **Environment Variables**: Configurar PAGNET_PUBLIC_KEY e PAGNET_SECRET_KEY
+
+### Verificar Deploy
+```bash
+# Ver logs do Heroku
+heroku logs --tail
+
+# Verificar variáveis de ambiente
+heroku config
+
+# Restart da aplicação
+heroku restart
+```
 
 ### Deploy com um clique
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
