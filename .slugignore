@@ -13,3 +13,13 @@ yarn-error.log*
 *.swp
 *.swo
 *~
+
+# Ignore attached assets and Python files that might interfere with buildpack detection
+attached_assets/
+*.py
+*.pyc
+__pycache__/
+requirements.txt
+Pipfile*
+poetry.lock
+uv.lock

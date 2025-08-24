@@ -16,9 +16,9 @@ Portal oficial do Programa Voa Brasil - Sistema de passagens aéreas por R$200 p
    cd voa-brasil-portal
    ```
 
-2. **Crie o app no Heroku**
+2. **Crie o app no Heroku especificando buildpack Node.js**
    ```bash
-   heroku create seu-app-name
+   heroku create seu-app-name --buildpack heroku/nodejs
    ```
 
 3. **Configure as variáveis de ambiente**
@@ -32,6 +32,12 @@ Portal oficial do Programa Voa Brasil - Sistema de passagens aéreas por R$200 p
    ```bash
    git push heroku main
    ```
+
+### Se o buildpack não foi detectado corretamente:
+```bash
+heroku buildpacks:set heroku/nodejs
+git push heroku main
+```
 
 ### Deploy com um clique
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
