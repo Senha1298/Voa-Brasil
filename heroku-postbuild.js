@@ -1,5 +1,5 @@
 // Heroku post-build script to handle the build process
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
 console.log('Starting Heroku post-build process...');
 

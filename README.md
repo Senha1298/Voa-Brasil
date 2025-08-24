@@ -47,6 +47,11 @@ O projeto usa `heroku-postbuild` script que:
 - Executa build do backend (esbuild)
 - Serve arquivos estáticos em produção
 
+### Troubleshooting Common Issues
+- **ES Module Error**: Script convertido para ES modules (import/export)
+- **Build Dependencies**: NPM_CONFIG_PRODUCTION=false garante devDependencies
+- **Node Version**: Usa Node.js mais recente disponível no Heroku
+
 ### Deploy com um clique
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
