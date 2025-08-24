@@ -1,0 +1,42 @@
+{
+  "name": "voa-brasil-portal",
+  "description": "Portal oficial do Programa Voa Brasil - Passagens aéreas por R$200",
+  "repository": "https://github.com/your-username/voa-brasil-portal",
+  "logo": "https://raw.githubusercontent.com/your-username/voa-brasil-portal/main/generated-icon.png",
+  "keywords": ["node", "express", "react", "typescript", "vite", "gov-br"],
+  "image": "heroku/nodejs",
+  "stack": "heroku-24",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "env": {
+    "NODE_ENV": {
+      "description": "Environment mode",
+      "value": "production"
+    },
+    "PORT": {
+      "description": "Port for the application",
+      "value": "5000"
+    },
+    "PAGNET_PUBLIC_KEY": {
+      "description": "Pagnet API public key for payment processing",
+      "required": true
+    },
+    "PAGNET_SECRET_KEY": {
+      "description": "Pagnet API secret key for payment processing",
+      "required": true
+    }
+  },
+  "scripts": {
+    "postdeploy": "echo 'Deployment completed successfully'"
+  },
+  "addons": []
+}

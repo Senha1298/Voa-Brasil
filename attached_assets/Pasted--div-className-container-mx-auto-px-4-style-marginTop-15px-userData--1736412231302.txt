@@ -1,0 +1,110 @@
+<div className="container mx-auto px-4" style={{ marginTop: '15px' }}>
+        {userData && (
+          <div className="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg -mt-4">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="col-span-2">
+                <label className="block text-sm font-medium text-gray-700">Nome Completo</label>
+                <input
+                  type="text"
+                  value={userData.nome}
+                  disabled
+                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#1351B4] focus:border-[#1351B4]"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">CPF</label>
+                <input
+                  type="text"
+                  value={formatCPF(userData.cpf)}
+                  disabled
+                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#1351B4] focus:border-[#1351B4]"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Data de Nascimento</label>
+                <input
+                  type="text"
+                  value={formatDate(userData.dataNascimento)}
+                  disabled
+                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#1351B4] focus:border-[#1351B4]"
+                />
+              </div>
+            </div>
+
+            <div className="mt-8 border-t border-gray-200 pt-8">
+              {verificationStep === 'analyzing' && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 mb-4">
+                    {currentStep < 4 ? (
+                      <Loader2 className="h-5 w-5 animate-spin text-green-600" />
+                    ) : (
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100">
+                        <Check className="h-5 w-5 text-green-600" />
+                      </div>
+                    )}
+                    <span className="font-medium">{status?.message}</span>
+                  </div>
+                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden mb-6">
+                    <div 
+                      className="h-full bg-green-600 transition-all duration-1000"
+                      style={{ width: `${status?.progress}%` }}
+                    />
+                  </div>
+                  {currentStep === 4 && (
+                    <button
+                      className="button-continuar bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium transition-colors w-full"
+                      onClick={handleContinue}
+                    >
+                      Continuar
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {verificationStep === 'validity' && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100">
+                      <Check className="h-5 w-5 text-green-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-green-900">
+                      Seu cadastro é válido por 5 anos!
+                    </h3>
+                  </div>
+                  <p className="text-green-800 mb-6">
+                    Durante esse período, você tem direito a 4 viagens de ida e volta por ano, pagando apenas R$ 200,00 por trecho ida e volta. Aproveite esta oportunidade única!
+                  </p>
+                  <button
+                    className="button-continuar bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium transition-colors w-full"
+                    onClick={handleContinue}
+                  >
+                    Continuar
+                  </button>
+                </div>
+              )}
+
+              {verificationStep === 'fee' && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-lg font-semibold text-red-900">
+                      Falta pouco para finalizar seu cadastro!
+                    </h3>
+                  </div>
+                  <p className="text-red-800 mb-6">
+                    Para concluir seu cadastro no Programa Voa Brasil, é obrigatório o pagamento da Taxa de Adesão no valor de R$ 77,15. Atenção: o não pagamento desta taxa resultará na perda do acesso ao programa.
+                  </p>
+                  <button
+                    className="button-continuar bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium transition-colors w-full"
+                    onClick={handleContinue}
+                  >
+                    Continuar
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

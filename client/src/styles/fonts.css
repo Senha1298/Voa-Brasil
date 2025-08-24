@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Rawline";
+  src: url("/fonts/rawline-400.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rawline";
+  src: url("/fonts/rawline-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rawline";
+  src: url("/fonts/rawline-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rawline";
+  src: url("/fonts/rawline-700.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Define the font within a proper Tailwind layer */
+@layer base {
+  html {
+    font-family: "Rawline", system-ui, sans-serif;
+  }
+}

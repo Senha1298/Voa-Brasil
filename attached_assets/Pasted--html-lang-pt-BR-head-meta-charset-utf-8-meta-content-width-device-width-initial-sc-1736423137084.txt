@@ -1,0 +1,82 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>gov.br - Portal Voa Brasil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Rawline:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Rawline', sans-serif;
+        }
+   .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+  </style>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'custom-blue': '#1451B4',
+                    'custom-bg': '#F8F8F8',
+                }
+            }
+        }
+    }
+  </script>
+</head>
+<body class="bg-gray-100">
+  <header class="bg-white px-4 py-2 flex justify-between items-center shadow-sm">
+    <div class="flex items-center">
+      <img alt="Logo gov.br estilizada com texto em azul e amarelo" class="mr-6" height="20" src="https://i.ibb.co/zPFChvR/logo645.png" width="60"/>
+      <button class="br-button small circle toggle-links-rapidos false svelte-26s767 ml-6" aria-label="Menu de links">
+        <i class="fas fa-ellipsis-v text-[#1451B4] text-xs" aria-hidden="true"></i>
+      </button>
+      <span class="br-divider vertical mx-3"></span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <select class="text-[#1451B4] bg-transparent border-none text-xs font-medium h-full flex items-center">
+        <option>PT</option>
+        <option>EN</option>
+        <option>ES</option>
+      </select>
+      <button class="text-[#1451B4]">
+        <i class="fas fa-cookie-bite" aria-hidden="true"></i>
+      </button>
+      <button class="text-[#1451B4]" type="button" aria-label="Sistemas">
+        <i class="fas fa-th" aria-hidden="true"></i>
+      </button>
+      <button class="bg-[#1451B4] text-white rounded-full px-3 py-1 flex items-center text-xs" type="button">
+        <i class="fas fa-user mr-1.5" aria-hidden="true"></i>
+        <span>Entrar</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="bg-white px-4 py-3 flex items-center justify-between shadow-sm sticky-nav">
+    <button class="text-[#1451B4] flex items-center">
+      <i class="fas fa-bars mr-2 text-sm"></i>
+      <span style="color: #666; font-size: 0.8rem; font-weight: 300; line-height: 16px; padding: 2px 0 0;">Programa Voa Brasil</span>
+    </button>
+    <button class="text-[#1451B4]" aria-label="Pesquisar">
+      <i class="fas fa-search text-sm"></i>
+    </button>
+  </nav>
+
+  <div class="bg-custom-bg w-full h-10 border-b-2 border-gray-200">
+    <div class="container mx-auto px-4 h-full flex items-center">
+      <div class="flex items-center">
+        <i class="fas fa-landmark text-custom-blue text-lg mr-3"></i>
+        <span class="text-black text-sm font-light mr-2">&gt;</span>
+        <span class="text-custom-blue text-sm font-light mr-2">Voa Brasil</span>
+        <span class="text-black text-sm font-light mr-2">&gt;</span>
+        <span class="text-custom-blue text-sm font-semibold">Cadastro</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

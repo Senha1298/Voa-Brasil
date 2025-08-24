@@ -1,0 +1,15 @@
+@import './styles/fonts.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: "Rawline", system-ui, sans-serif;
+  }
+}
