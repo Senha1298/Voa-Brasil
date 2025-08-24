@@ -37,7 +37,13 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const server = registerRoutes(app);
+  console.log('[STARTUP] Initializing server...');
+  console.log('[STARTUP] NODE_ENV:', process.env.NODE_ENV);
+  console.log('[STARTUP] PORT:', process.env.PORT);
+  console.log('[STARTUP] Platform:', process.platform);
+  
+  try {
+    const server = registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -75,4 +81,12 @@ app.use((req, res, next) => {
     log(`Environment: ${process.env.NODE_ENV}`);
     log(`Platform: ${process.platform}`);
   });
-})();
+  
+  } catch (error) {
+    console.error('[STARTUP] Fatal error during server initialization:', error);
+    process.exit(1);
+  }
+})().catch(error => {
+  console.error('[STARTUP] Unhandled error in main function:', error);
+  process.exit(1);
+});

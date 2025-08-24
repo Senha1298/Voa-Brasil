@@ -178,6 +178,8 @@ class PagnetAPI {
 }
 
 export function registerRoutes(app: Express): Server {
+  console.log('[ROUTES] Registering API routes...');
+  
   // Create PIX transaction endpoint
   app.post("/api/create-pix", async (req, res) => {
     try {
@@ -220,6 +222,7 @@ export function registerRoutes(app: Express): Server {
     }
   });
 
+  console.log('[ROUTES] All routes registered successfully');
   const httpServer = createServer(app);
   return httpServer;
 }
